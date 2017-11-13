@@ -7,8 +7,16 @@ var config = {
     },
      
     devServer: {
-       inline: true,
-       port: 8080
+      port: 8080,
+      hot: true,
+      compress: false,
+      historyApiFallback: true,
+      stats: {
+        colors: true,
+        timings: true,
+        version: true,
+        warnings: true
+      }
     },
      
     module: {

@@ -1,14 +1,15 @@
-import react from 'react'
+import React from 'react'
 
-class NotFoundPage extends react.Component{
+class NotFoundPage extends React.Component{
     constructor(props){
         super(props)
     }
     render(){
         return(
             <div>
-                Login
+                NotFoundPage
             </div>
         )
     }
 }
+export default NotFoundPage
