@@ -1,4 +1,4 @@
-import React from 'react'
+            import React from 'react'
 import {Col, Card,Input,Button} from 'react-materialize'
 import styled from 'styled-components'
 
@@ -6,7 +6,7 @@ const Box = styled.div`
 width:600px;
 height:444px;
 position:absolute;
-left:30%;
+left:27%;
 top:5%;       
 border-radius:19px;
 margin: auto;
@@ -32,8 +32,8 @@ const logo = require("../asset/img/macaron.png")
 export default () =>(
 <div>
         <Box>
-        <Col m={6} s={12}>
-            <Card className='grey lighten-5'  title='Login' >
+        <Col s={12}>
+            <Card m={6} s={12} className='grey lighten-5'  title='Login' >
             <img style={logoimg} src={logo} width={167} alt=""/>
                 <Form>
                     <Input placeholder="Username" s={6} />
