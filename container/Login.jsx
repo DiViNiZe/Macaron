@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import LoginBox from '../components/LoginBox.jsx'
 
 class Login extends React.Component{
     constructor(props){
@@ -9,10 +10,9 @@ class Login extends React.Component{
     render(){
         return(
             <div>
-                Login
-                <ul>
-                    <li><Link to='/notFound'>link</Link></li>
-                </ul>
+                <LoginBox>
+                    Login
+                </LoginBox>
             </div>
         )
     }
