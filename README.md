@@ -27,6 +27,8 @@ cd Macaron
 ```
 npm install
 ```
+npm install -g babel
+npm install -g babel-cli
 
 
 ## Deployment
