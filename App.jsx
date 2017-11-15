@@ -22,11 +22,10 @@ class App extends React.Component {
    render() {
         return (
             <div>
-                {/* <Switch>
+                <Switch>
                     <Route exact path='/' component={Login}/>
                     <Route path='/dash' component={BackCom}/>
-                </Switch> */}
-                <Menu name ='Home'/>
+                </Switch>
             </div>
         )
    } 

@@ -8,7 +8,7 @@ const logo = require("../asset/img/logo.png")
 const hstyle = {
     backgroundColor:'#00695c',
     color:'Black',
-    height:'210px',
+    height:'170px',
 }
 
 const Heading = styled.div`
@@ -18,9 +18,13 @@ const Heading = styled.div`
     font-size:33px;
     font-style:italic;
 `
+const Space = styled.div`
+height:5px;
+`
 
 const Head = ()=>(
-    <div  style={hstyle}>
+    <div  style={hstyle} className='z-depth-2'>
+            <Space/>
             <ShopLogo img={logo}/>
             <div>
                 <Heading>
