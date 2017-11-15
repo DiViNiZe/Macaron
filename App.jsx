@@ -9,6 +9,7 @@ import {HashRouter} from 'react-router-dom'
 import Login from './container/Login.jsx'
 import NotFoundPage from './container/NotFoundPage.jsx'
 import BackCom from './container/BackCom.jsx'
+import Menu from './components/Menu.jsx'
 import './asset/css/style.css'
 
 
@@ -23,10 +24,9 @@ class App extends React.Component {
             <div>
                 {/* <Switch>
                     <Route exact path='/' component={Login}/>
-                    <Route path='/notFound' component={NotFoundPage}/>
-                    <Route path='/dash' Component={BackC} />
+                    <Route path='/dash' component={BackCom}/>
                 </Switch> */}
-                <BackCom/>
+                <Menu name ='Home'/>
             </div>
         )
    } 

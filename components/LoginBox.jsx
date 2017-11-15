@@ -1,4 +1,4 @@
-            import React from 'react'
+import React from 'react'
 import {Col, Card,Input,Button} from 'react-materialize'
 import styled from 'styled-components'
 
@@ -30,7 +30,7 @@ const logoimg = {
 const logo = require("../asset/img/macaron.png")
 
 export default () =>(
-<div>
+    <div>
         <Box>
         <Col s={12}>
             <Card m={6} s={12} className='grey lighten-5'  title='Login' >
