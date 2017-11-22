@@ -17,17 +17,16 @@ padding:0px;
 
 const noSpace = {
     margin:'0px',
-    padding:'0px'
+    padding:'0px',
+    marginLeft : '100px'
 }
 
 const CardSearch = props => (
     <div>
-        <Card style={noSpace} className='grey lighten-5'>
            <NoSpace>
                 <Input label="Search"/>
                 <Button waves='light'><Icon>search</Icon></Button>
             </NoSpace>
-        </Card>
     </div>
 )
 export default CardSearch
