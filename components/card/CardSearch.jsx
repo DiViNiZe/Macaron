@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col, Card, Button ,Input , Icon} from 'react-materialize'
+import { Row, Col, Card, Button, Input, Icon } from 'react-materialize'
 import styled from 'styled-components'
 
 const Css = styled.div`
@@ -13,20 +13,34 @@ height:200px;
 const NoSpace = styled.div`
 margin:0px;
 padding:0px;
+float : right;
+text-align : right;
 `
+const InputBar = styled.div`
+float : left;
+margin:0px;
+padding:0px;
+`
+const ButtonBar = styled.div`
+margin-top: 20px;
+margin-left: 10px;
+margin-right: 5px;
+margin-bottom: 0px;
+float : left;
 
-const noSpace = {
-    margin:'0px',
-    padding:'0px',
-    marginLeft : '100px'
-}
+`
 
 const CardSearch = props => (
     <div>
-           <NoSpace>
-                <Input label="Search"/>
+        <NoSpace>
+            <InputBar>
+                <Input label="Search" />
+            </InputBar>
+            <ButtonBar>
                 <Button waves='light'><Icon>search</Icon></Button>
-            </NoSpace>
+            </ButtonBar>
+
+        </NoSpace>
     </div>
 )
 export default CardSearch

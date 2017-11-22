@@ -17,19 +17,18 @@ class BackCom extends React.Component {
     render() {
         return (
             <div>
-                <Head />                
-                <Row>
-                    <Col s={4}>
+                <Head />
+                <Div>
                     <Test />
-                    </Col>
-                    
-                    <Col s={4}>
-                    <Test />
-                    </Col>
-                    <Col s={4}>
-                    <Test />
-                    </Col>
+                    <Row>
+                        <Col s={6}>
+                            <SmallCard />
+                        </Col>
+                        <Col s={6}>
+                            <SmallCard />
+                        </Col>
                     </Row>
+                </Div>
             </div>
         )
     }
