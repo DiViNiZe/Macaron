@@ -16,7 +16,6 @@ render(){
     
     const logo = require("../asset/img/logo.png")
     
-    
     const hstyle = {
         backgroundColor: '#00695c',
         color: 'Black',
@@ -44,20 +43,26 @@ render(){
         margin-top : 5px;
         float:right;
     `
-    var greeting = 'hey'
     const openModal = ()=>{
-        this.setState = {isOpen:true}
+        console.log('clicked')
+        this.setState({isOpen:true})
     }
     
     const closeModal = ()=>{
-        this.setState = {isOpen:false}
+        this.setState({isOpen:false})        
+    }
+    const toggleButton =()=>{
+        if(this.state.isOpen==true){
+            closeModal()
+        }else{
+            openModal()
+        }
     }
         return(
-            
-            <div>
+            <div style={hstyle}>
                 <Space />
                 <Set>
-                        <a style={setting} className="waves-effect" onClick={openModal}><Icon>settings</Icon></a>
+                        <a style={setting} className="waves-effect" onClick={toggleButton}><Icon>settings</Icon></a>
                 </Set>
                 <ShopLogo style={{clear:'both'}} img={logo} />
                 <div>
@@ -66,7 +71,7 @@ render(){
                     </Heading>
                 </div>
                 <Modal isOpen = {this.state.isOpen}>
-
+                    wow
                 </Modal>
             </div>
         )

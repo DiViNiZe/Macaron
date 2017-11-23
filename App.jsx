@@ -12,7 +12,6 @@ import BackCom from './container/BackCom.jsx'
 import Menu from './components/Menu.jsx'
 import './asset/css/style.css'
 
-
 class App extends React.Component {
 
     constructor(props){
