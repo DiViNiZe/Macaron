@@ -1,86 +1,59 @@
 import React from 'react'
 import Head from '../components/Head.jsx'
-import Test from '../components/card/Test.jsx'
 import styled from 'styled-components'
-import SmallCard from '../components/card/SmallCard.jsx'
 import { Row, Col, Card, Button } from 'react-materialize'
-import Chart from 'chart.js'
+import ChartCard from '../components/card/ChartCard.jsx'
+import ChartCard2 from '../components/card/ChartCard2.jsx'
 
 const Div = styled.div`
-padding-top:7px;
+padding-top:25px;
 `
 
 const chartData ={
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri","Sat"],
     datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
+        label: 'Sells History',
+        data: [12, 19, 3, 5, 2, 3,20],
         backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
         ],
         borderColor: [
-            'rgba(255,99,132,1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            'rgba(255,99,132,1)', 
+        ],
+        borderWidth: 1
+    }]
+}
+const chartData2 ={
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+    datasets: [{
+        label: 'Sells History',
+        data: [12, 19, 3, 5, 2, 3,20,11,50,35,12,62],
+        backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+        ],
+        borderColor: [
+            'rgba(255,99,132,1)', 
         ],
         borderWidth: 1
     }]
 }
 
 
-class BackCom extends React.Component {
+class Chart extends React.Component {
     constructor(props) {
         super(props)
-    }
-    componentDidMount(){
-        let chartCanvas = this.refs.chart;
-        
-          let myChart = new Chart(chartCanvas, {
-            type: 'line',
-            data: chartData,
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero:true
-                        }
-                    }]
-                }
-            }
-          });
-        
-          this.setState({chart: myChart});
-    }
-
-    componentDidUpdate () {
-        let chart = this.state.chart;
-        let data = this.props.data;
-    
-        data.datasets.forEach((dataset, i) => chart.data.datasets[i].data = dataset.data);
-    
-        chart.data.labels = data.labels;
-        chart.update();
     }
 
     render() {
         return (
             <div>
-                <Div>
+                <Div s>
                     <Row>
                         <Col s={6}>
-                        <Card>
-                        <canvas ref={'chart'} height={'400'} width={'600'}></canvas>
-                        </Card>
+                            <ChartCard data={chartData} />
                         </Col>
                         <Col s={6}>
+                            <ChartCard data={chartData2} />
                         </Col>
                     </Row>
                 </Div>
@@ -88,4 +61,4 @@ class BackCom extends React.Component {
         )
     }
 }
-export default BackCom
+export default Chart

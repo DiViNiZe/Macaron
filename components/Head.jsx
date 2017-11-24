@@ -1,13 +1,33 @@
 import React from 'react'
 import ShopLogo from './ShopLogo.jsx'
 import styled from 'styled-components'
-import { Row, Col, Card, Button, Input, Icon , Modal } from 'react-materialize'
+import { Row, Col, Card, Button, Input, Icon, SideNav, SideNavItem } from 'react-materialize'
+import Modal from 'react-modal'
+import FontIcon from 'material-ui/FontIcon';
+import { BottomNavigation, BottomNavigationItem } from 'material-ui/BottomNavigation';
+import Paper from 'material-ui/Paper';
+import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AwsomeModal from '../components/AwsomeModal.jsx'
+
 
 
 
 class Head extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            isOpen: false,
+            cur:""
+        }
+        this.openModal = this.openModal.bind(this)
+    }
+
+    openModal(modal){
+        this.setState({
+            isOpen:true,
+            cur:modal
+        })
     }
 
     render() {
@@ -18,6 +38,7 @@ class Head extends React.Component {
             backgroundColor: '#00695c',
             color: 'Black',
             height: '170px',
+
         }
 
         const Heading = styled.div`
@@ -26,10 +47,11 @@ class Head extends React.Component {
         position: absolute;
         font-size:33px;
         font-style:italic;
-    `
+        `
+
         const Space = styled.div`
-    height:5px;
-    `
+        height:5px;
+        `
 
         const setting = {
             color: '#eceff1',
@@ -37,34 +59,88 @@ class Head extends React.Component {
         }
 
         const Set = styled.div`
-        margin-right : 10px;
+        margin-right :   10px;
         margin-top : 5px;
         float:right;
-    `
+        `
         const Name = styled.div`
             padding : 50px;
-     `
-        const nstyle ={
-            marginTop : '25px'
-            }
+        `
+        const nstyle = {
+            marginTop: '25px',
+        }
+
+        const Side = styled.div`
+            text-align : right;
+        `
+        
+
+        const select = (index) => this.setState({ selectedIndex: index });
+        const recentsIcon = <FontIcon className="material-icons">restore</FontIcon>;
+        const favoritesIcon = <FontIcon className="material-icons">favorite</FontIcon>;
+        const nearbyIcon = <IconLocationOn />;
+        const openModal =()=>{
+            this.setState({isOpen:true})
+        }
+
+        const modal1 = () =>(
+            <div>
+                Im1
+            </div>
+        )
+
+        const modal2 = () =>(
+            <div>
+                Im1
+            </div>
+        )
+
+        const modal3 = () =>(
+            <div>
+                Im1
+            </div>
+        )
+
+
 
         return (
             <div style={hstyle}>
                 <Space />
-                {/* <Modal
-	                header='Modal Header'
-	                trigger={<Set>
-                        <a style={setting} className="waves-effect" ><Icon>settings</Icon></a>
-                    </Set>}>
-	                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-		                incididunt ut labore et dolore magna aliqua.</p>
-                </Modal> */}
                 <ShopLogo style={{ clear: 'both' }} img={logo} />
                 <div>
                     <Heading>
                         DASHBORD
                     </Heading>
                 </div>
+                <div>
+                    <Side>
+                        <SideNav
+                            trigger={<Set>
+                                <a style={setting} className="waves-effect" ><Icon>dehaze</Icon></a>
+                            </Set>}
+                        >
+                            <SideNavItem userView
+                                user={{
+                                    background: 'img/office.jpg',
+                                    image: 'img/yuna.jpg',
+                                    name: 'John Doe',
+                                    email: 'jdandturk@gmail.com'
+                                }}
+                            />
+                            <SideNavItem onClick={()=>{this.openModal(modal1)}} icon='assignment_ind' >Employees</SideNavItem>
+                            <SideNavItem icon='recent_actors' >Member</SideNavItem>
+                            <SideNavItem onClick={e => console.log(e)} divider />
+                            <SideNavItem  >Setting</SideNavItem>
+                            <SideNavItem waves href='#!third'>Sign out</SideNavItem>
+                        </SideNav>
+                    </Side>
+                </div>
+                <div>
+                </div>
+                   <AwsomeModal
+                   isOpen={this.state.isOpen}
+                   component ={this.state.cur}
+                   />
             </div>
         )
     }

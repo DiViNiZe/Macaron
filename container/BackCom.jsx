@@ -20,7 +20,7 @@ class BackCom extends React.Component {
     render() {
         return (
             <div>
-                <Head />                
+                <Head />              
             <Switch>
                 <Route exact path='/' component={Chart}/>
                 <Route path='/search' component={Search} />
