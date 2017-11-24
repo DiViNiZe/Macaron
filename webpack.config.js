@@ -62,9 +62,7 @@ var config = {
           }
        ]
     },
-    resolve: {
-      alias: { 'chart': require.resolve('chart.js') }
-    },
+
  }
  
  module.exports = config;

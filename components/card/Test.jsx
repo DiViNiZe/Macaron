@@ -9,15 +9,7 @@ margin : 10px
 const Test = props =>(
     <Css>
         <Card className='grey lighten-5'  title='Login'>
-            TON TAn
-            <div /> adfasdf
-            <div /> adfasdf
-            <div /> adfasdf
-            <div /> adfasdf
-            <div /> adfasdf
-            <div /> adfasdf
-            <div /> adfasdf
-            <div /> adfasdf
+            
         </Card>
     </Css>
 )
