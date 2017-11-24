@@ -50,16 +50,15 @@ class Head extends React.Component {
 
         return (
             <div style={hstyle}>
-            {console.log(Modal)}
                 <Space />
-                <Modal
+                {/* <Modal
 	                header='Modal Header'
 	                trigger={<Set>
                         <a style={setting} className="waves-effect" ><Icon>settings</Icon></a>
                     </Set>}>
 	                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 		                incididunt ut labore et dolore magna aliqua.</p>
-                </Modal>
+                </Modal> */}
                 <ShopLogo style={{ clear: 'both' }} img={logo} />
                 <div>
                     <Heading>

@@ -5,8 +5,7 @@ import styled from 'styled-components'
 import SmallCard from '../components/card/SmallCard.jsx'
 import { Row, Col, Card, Button } from 'react-materialize'
 
-const BarChart = require("react-chartjs").Bar;
-
+const LineChart = require('react-chartjs').Line;
 
 
 const Div = styled.div`
@@ -20,15 +19,13 @@ class BackCom extends React.Component {
     render() {
         return (
             <div>
-                <Head />
                 <Div>
                     <Test />
                     <Row>
                         <Col s={6}>
-                            <BarChart/>
+                        {/* <LineChart/> */}
                         </Col>
                         <Col s={6}>
-                            <SmallCard />
                         </Col>
                     </Row>
                 </Div>

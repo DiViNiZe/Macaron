@@ -21,10 +21,7 @@ class App extends React.Component {
    render() {
         return (
             <div>
-                <Switch>
-                    <Route exact path='/' component={Login}/>
-                    <Route path='/dash' component={BackCom}/>
-                </Switch>
+                <BackCom/>
             </div>
         )
    } 
