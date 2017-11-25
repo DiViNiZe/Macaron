@@ -7,14 +7,18 @@ margin : 0px ;
 padding : 0px;
 `
 
-const SmallCard2 = props => (
+const CardStore = props => (
     <Css>
         <Card className='grey lighten-5' title='Login'>
             TON Tan
             <div /> sfasf
             <div /> sfasf
             <div /> sfasf
+            <div /> sfasf
+            <div /> sfasf
+            <div /> sfasf
+            <div /> sfasf
         </Card>
     </Css >
 )
-export default SmallCard2
+export default CardStore

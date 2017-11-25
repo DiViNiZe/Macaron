@@ -16,32 +16,36 @@ class Head extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-           modal1:false,
-           modal2:false,
-           modal3:false
+            modal1: false,
+            modal2: false,
+            modal3: false
         }
     }
 
-    openModal1(){
-        this.setState({  
-            modal1:true
+    openModal1() {
+        this.setState({
+            modal1: true
         })
     }
-    openModal2(){
+    openModal2() {
         this.setState({
-            modal2:!this.state.modal2,
-            
+            modal2: !this.state.modal2,
+
         })
     }
-    openModal3(){
+    openModal3() {
         this.setState({
-            modal3:!this.state.modal3,
+            modal3: !this.state.modal3,
         })
     }
 
     render() {
 
+        const backgroundImg = require("../asset/img/flat7_prev.jpg")
+
         const logo = require("../asset/img/logo.png")
+
+        const user = require("../asset/img/ton.jpg")
 
         const hstyle = {
             backgroundColor: '#00695c',
@@ -82,28 +86,28 @@ class Head extends React.Component {
         const Side = styled.div`
             text-align : right;
         `
-        
+
         const select = (index) => this.setState({ selectedIndex: index });
         const recentsIcon = <FontIcon className="material-icons">restore</FontIcon>;
         const favoritesIcon = <FontIcon className="material-icons">favorite</FontIcon>;
         const nearbyIcon = <IconLocationOn />;
-        const openModal =()=>{
-            this.setState({isOpen:true})
+        const openModal = () => {
+            this.setState({ isOpen: true })
         }
 
-        const Modal1 = () =>(
+        const Modal1 = () => (
             <div>
                 Im1
             </div>
         )
 
-        const Modal2 = () =>(
+        const Modal2 = () => (
             <div>
                 Im1
             </div>
         )
 
-        const Modal3 = () =>(
+        const Modal3 = () => (
             <div>
                 Im1
             </div>
@@ -129,15 +133,18 @@ class Head extends React.Component {
                         >
                             <SideNavItem userView
                                 user={{
-                                    background: 'img/office.jpg',
-                                    image: 'img/yuna.jpg',
+                                    background:backgroundImg,
+                                    image: user,
                                     name: 'John Doe',
-                                    email: 'jdandturk@gmail.com'
+                                    email: 'Employee'
                                 }}
                             />
                             <SideNavItem onClick={this.openModal1} icon='assignment_ind' >Employees</SideNavItem>
-                            <SideNavItem icon='recent_actors' >Member</SideNavItem>
+                            <SideNavItem icon='recent_actors' >Register Member</SideNavItem>
                             <SideNavItem onClick={e => console.log(e)} divider />
+                            <SideNavItem  >Home</SideNavItem>
+                            <SideNavItem  >Chart</SideNavItem>
+                            <SideNavItem  >Store</SideNavItem>
                             <SideNavItem  >Setting</SideNavItem>
                             <SideNavItem waves href='#!third'>Sign out</SideNavItem>
                         </SideNav>
@@ -146,29 +153,29 @@ class Head extends React.Component {
                 <div>
                 </div>
                 <Modal
-      isOpen={this.state.modal1}
-      aria={{
-          labelledby: "heading",
-          describedby: "full_description"
-      }}>
-      <Modal1/>
-      </Modal>
-      <Modal
-      isOpen={this.state.modal2}
-      aria={{
-          labelledby: "heading",
-          describedby: "full_description"
-      }}>
-      <Modal2/>
-      </Modal>
-      <Modal
-      isOpen={this.state.modal3}
-      aria={{
-          labelledby: "heading",
-          describedby: "full_description"
-      }}>
-      <Modal3/>
-      </Modal>
+                    isOpen={this.state.modal1}
+                    aria={{
+                        labelledby: "heading",
+                        describedby: "full_description"
+                    }}>
+                    <Modal1 />
+                </Modal>
+                <Modal
+                    isOpen={this.state.modal2}
+                    aria={{
+                        labelledby: "heading",
+                        describedby: "full_description"
+                    }}>
+                    <Modal2 />
+                </Modal>
+                <Modal
+                    isOpen={this.state.modal3}
+                    aria={{
+                        labelledby: "heading",
+                        describedby: "full_description"
+                    }}>
+                    <Modal3 />
+                </Modal>
             </div>
         )
     }

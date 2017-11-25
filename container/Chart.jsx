@@ -6,7 +6,7 @@ import ChartCard from '../components/card/ChartCard.jsx'
 import ChartCard2 from '../components/card/ChartCard2.jsx'
 
 const Div = styled.div`
-padding-top:25px;
+padding-top:10px;
 `
 
 const chartData ={
