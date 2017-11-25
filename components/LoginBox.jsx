@@ -6,7 +6,7 @@ const Box = styled.div`
 width:600px;
 height:444px;
 position:absolute;
-left:27%;
+left:31%;
 top:5%;       
 border-radius:19px;
 margin: auto;

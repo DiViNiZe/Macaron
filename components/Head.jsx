@@ -12,21 +12,30 @@ import AwsomeModal from '../components/AwsomeModal.jsx'
 
 
 
-
 class Head extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            isOpen: false,
-            cur:""
+           modal1:false,
+           modal2:false,
+           modal3:false
         }
-        this.openModal = this.openModal.bind(this)
     }
 
-    openModal(modal){
+    openModal1(){
+        this.setState({  
+            modal1:true
+        })
+    }
+    openModal2(){
         this.setState({
-            isOpen:true,
-            cur:modal
+            modal2:!this.state.modal2,
+            
+        })
+    }
+    openModal3(){
+        this.setState({
+            modal3:!this.state.modal3,
         })
     }
 
@@ -74,7 +83,6 @@ class Head extends React.Component {
             text-align : right;
         `
         
-
         const select = (index) => this.setState({ selectedIndex: index });
         const recentsIcon = <FontIcon className="material-icons">restore</FontIcon>;
         const favoritesIcon = <FontIcon className="material-icons">favorite</FontIcon>;
@@ -83,19 +91,19 @@ class Head extends React.Component {
             this.setState({isOpen:true})
         }
 
-        const modal1 = () =>(
+        const Modal1 = () =>(
             <div>
                 Im1
             </div>
         )
 
-        const modal2 = () =>(
+        const Modal2 = () =>(
             <div>
                 Im1
             </div>
         )
 
-        const modal3 = () =>(
+        const Modal3 = () =>(
             <div>
                 Im1
             </div>
@@ -127,7 +135,7 @@ class Head extends React.Component {
                                     email: 'jdandturk@gmail.com'
                                 }}
                             />
-                            <SideNavItem onClick={()=>{this.openModal(modal1)}} icon='assignment_ind' >Employees</SideNavItem>
+                            <SideNavItem onClick={this.openModal1} icon='assignment_ind' >Employees</SideNavItem>
                             <SideNavItem icon='recent_actors' >Member</SideNavItem>
                             <SideNavItem onClick={e => console.log(e)} divider />
                             <SideNavItem  >Setting</SideNavItem>
@@ -137,10 +145,30 @@ class Head extends React.Component {
                 </div>
                 <div>
                 </div>
-                   <AwsomeModal
-                   isOpen={this.state.isOpen}
-                   component ={this.state.cur}
-                   />
+                <Modal
+      isOpen={this.state.modal1}
+      aria={{
+          labelledby: "heading",
+          describedby: "full_description"
+      }}>
+      <Modal1/>
+      </Modal>
+      <Modal
+      isOpen={this.state.modal2}
+      aria={{
+          labelledby: "heading",
+          describedby: "full_description"
+      }}>
+      <Modal2/>
+      </Modal>
+      <Modal
+      isOpen={this.state.modal3}
+      aria={{
+          labelledby: "heading",
+          describedby: "full_description"
+      }}>
+      <Modal3/>
+      </Modal>
             </div>
         )
     }

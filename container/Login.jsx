@@ -8,8 +8,13 @@ class Login extends React.Component{
     }
     
     render(){
+    const style = {
+        width:'100%',
+        height:'100%',
+        backgroundColor:'rgba(255, 255, 255, 0.8)'
+    }
         return(
-            <div>
+            <div style = {style}>
                 <LoginBox>
                     Login
                 </LoginBox>

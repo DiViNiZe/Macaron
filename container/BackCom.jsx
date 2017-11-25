@@ -5,7 +5,7 @@ import Chart from './Chart.jsx'
 import styled from 'styled-components'
 import {
     Switch,
-    Route
+    Route,
 } from 'react-router'
  
 
