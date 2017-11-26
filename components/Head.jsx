@@ -2,7 +2,6 @@ import React from 'react'
 import ShopLogo from './ShopLogo.jsx'
 import styled from 'styled-components'
 import { Row, Col, Card, Button, Input, Icon, SideNav, SideNavItem } from 'react-materialize'
-import Modal from 'react-modal'
 import FontIcon from 'material-ui/FontIcon';
 import { BottomNavigation, BottomNavigationItem } from 'material-ui/BottomNavigation';
 import Paper from 'material-ui/Paper';
@@ -10,8 +9,7 @@ import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AwsomeModal from '../components/AwsomeModal.jsx'
 import {Link} from 'react-router-dom'
-
-
+import Clock from 'react-live-clock'
 
 
 class Head extends React.Component {
@@ -37,7 +35,7 @@ class Head extends React.Component {
         padding:30px 0px 0px 180px;
         width:40px;
         position: absolute;
-        font-size:33px;
+        font-size:42px;
         font-style:italic;
         `
 
@@ -66,6 +64,7 @@ class Head extends React.Component {
             width:'100%'
         }
 
+
         const select = (index) => this.setState({ selectedIndex: index });
         const recentsIcon = <FontIcon className="material-icons">restore</FontIcon>;
         const favoritesIcon = <FontIcon className="material-icons">favorite</FontIcon>;
@@ -73,7 +72,7 @@ class Head extends React.Component {
 
 
         return (
-            <div style={hstyle}>
+            <div className="z-depth-2" style={hstyle}>
                 <Space />
                
                 <div>
@@ -82,7 +81,7 @@ class Head extends React.Component {
                     </Heading>
                 </div>
                 <div>
-                        <SideNav
+                        <SideNav 
                             trigger={<Set>
                                 <ShopLogo style={{ clear: 'both' }} img={logo} />
                             </Set>}
