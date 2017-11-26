@@ -9,36 +9,15 @@ import Paper from 'material-ui/Paper';
 import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AwsomeModal from '../components/AwsomeModal.jsx'
+import {Link} from 'react-router-dom'
+
 
 
 
 class Head extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            modal1: false,
-            modal2: false,
-            modal3: false
-        }
     }
-
-    openModal1() {
-        this.setState({
-            modal1: true
-        })
-    }
-    openModal2() {
-        this.setState({
-            modal2: !this.state.modal2,
-
-        })
-    }
-    openModal3() {
-        this.setState({
-            modal3: !this.state.modal3,
-        })
-    }
-
     render() {
 
         const backgroundImg = require("../asset/img/flat7_prev.jpg")
@@ -73,8 +52,8 @@ class Head extends React.Component {
 
         const Set = styled.div`
         margin-right :   10px;
-        margin-top : 5px;
-        float:right;
+        margin-top : 2px;
+        float:left;
         `
         const Name = styled.div`
             padding : 50px;
@@ -83,52 +62,29 @@ class Head extends React.Component {
             marginTop: '25px',
         }
 
-        const Side = styled.div`
-            text-align : right;
-        `
+        const full = {
+            width:'100%'
+        }
 
         const select = (index) => this.setState({ selectedIndex: index });
         const recentsIcon = <FontIcon className="material-icons">restore</FontIcon>;
         const favoritesIcon = <FontIcon className="material-icons">favorite</FontIcon>;
-        const nearbyIcon = <IconLocationOn />;
-        const openModal = () => {
-            this.setState({ isOpen: true })
-        }
-
-        const Modal1 = () => (
-            <div>
-                Im1
-            </div>
-        )
-
-        const Modal2 = () => (
-            <div>
-                Im1
-            </div>
-        )
-
-        const Modal3 = () => (
-            <div>
-                Im1
-            </div>
-        )
-
+        const nearbyIcon = <IconLocationOn />
 
 
         return (
             <div style={hstyle}>
                 <Space />
-                <ShopLogo style={{ clear: 'both' }} img={logo} />
+               
                 <div>
                     <Heading>
-                        DASHBORD
+                        DRASHBORD
                     </Heading>
                 </div>
                 <div>
-                    <Side>
                         <SideNav
                             trigger={<Set>
-                                <a style={setting} className="waves-effect" ><Icon>dehaze</Icon></a>
+                                <ShopLogo style={{ clear: 'both' }} img={logo} />
                             </Set>}
                         >
                             <SideNavItem userView
@@ -139,43 +95,17 @@ class Head extends React.Component {
                                     email: 'Employee'
                                 }}
                             />
-                            <SideNavItem onClick={this.openModal1} icon='assignment_ind' >Employees</SideNavItem>
-                            <SideNavItem icon='recent_actors' >Register Member</SideNavItem>
+                            <SideNavItem onClick={this.openModal1} icon='assignment_ind' ><Link style={full} to="/emp">Employee</Link></SideNavItem>
+                            <SideNavItem icon='recent_actors' ><Link to="/regis">Regis </Link></SideNavItem>
                             <SideNavItem onClick={e => console.log(e)} divider />
-                            <SideNavItem  >Home</SideNavItem>
-                            <SideNavItem  >Chart</SideNavItem>
-                            <SideNavItem  >Store</SideNavItem>
-                            <SideNavItem  >Setting</SideNavItem>
+                            <SideNavItem  ><Link to="/">Home</Link></SideNavItem>
+                            <SideNavItem  ><Link to="/Store">Store</Link></SideNavItem>
+                            <SideNavItem  ><Link to="/setting">Setting</Link></SideNavItem>
                             <SideNavItem waves href='#!third'>Sign out</SideNavItem>
                         </SideNav>
-                    </Side>
                 </div>
                 <div>
                 </div>
-                <Modal
-                    isOpen={this.state.modal1}
-                    aria={{
-                        labelledby: "heading",
-                        describedby: "full_description"
-                    }}>
-                    <Modal1 />
-                </Modal>
-                <Modal
-                    isOpen={this.state.modal2}
-                    aria={{
-                        labelledby: "heading",
-                        describedby: "full_description"
-                    }}>
-                    <Modal2 />
-                </Modal>
-                <Modal
-                    isOpen={this.state.modal3}
-                    aria={{
-                        labelledby: "heading",
-                        describedby: "full_description"
-                    }}>
-                    <Modal3 />
-                </Modal>
             </div>
         )
     }

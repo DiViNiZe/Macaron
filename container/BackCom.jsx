@@ -7,6 +7,11 @@ import {
     Switch,
     Route,
 } from 'react-router'
+import Store from './Store.jsx'
+import Setting from './Setting.jsx'
+import RegisMem from './RegisMem.jsx'
+import Emp from './Emp.jsx'
+
  
 
 const Div = styled.div`
@@ -23,7 +28,10 @@ class BackCom extends React.Component {
                 <Head />              
             <Switch>
                 <Route exact path='/' component={Chart}/>
-                <Route path='/search' component={Search} />
+                <Route path='/store' component={Store}/>
+                <Route path='/setting' component={Setting}/>
+                <Route path='/regis' component={RegisMem}/>
+                <Route path='/emp' component={Emp}/>
             </Switch>
             </div>
         )

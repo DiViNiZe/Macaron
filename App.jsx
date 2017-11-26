@@ -47,14 +47,9 @@ class App extends React.Component {
 
         return (
             <div>
-                    {/* <PrivateRoute path="/" component={BackCom}/>
-                    <Route path="/login" component={Login}/> */}
+                    <PrivateRoute path="/" component={BackCom}/>
+                    <Route path="/login" component={Login}/>
                     {/* <BackCom/> */}
-                    {/* <Home /> */}
-                    {/* <Store /> */}
-                    {/* <Setting /> */}
-                    <RegisMem />
-                    {/* <Emp /> */}
             </div>
         )
    } 

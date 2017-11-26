@@ -13,7 +13,6 @@ class RegisMem extends React.Component {
     render() {
         return (
             <div>
-                <Head />
               <Con>
               <Row>
                   <Col s={9}>

@@ -34,7 +34,7 @@ const CardSearch = props => (
     <div>
         <NoSpace>
             <InputBar>
-                <Input label="Search" />
+                <Input label="Search" onChange={props.onChange} />
             </InputBar>
             <ButtonBar>
                 <Button waves='light'><Icon>search</Icon></Button>
